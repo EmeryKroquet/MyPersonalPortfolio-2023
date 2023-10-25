@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+
+{% block contenu %}
+<h1>Expérience Professionnelle</h1>
+<ul hx-target="#experience-details">
+    {% for experience in experiences %}
+        <li hx-get="/experience/{{ experience.id }}/detail/">{{ experience.poste }} chez {{ experience.entreprise }}</li>
+    {% empty %}
+        <li>Aucune expérience professionnelle à afficher pour le moment.</li>
+    {% endfor %}
+</ul>
+<div id="experience-details"></div>
+{% endblock %}
