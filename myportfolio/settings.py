@@ -22,9 +22,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '7p#wsdw2e_3%qh4@^_*or@1v+^x0(ogu-%nn($n4c9^k3v*+s@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 # Application definition
 
@@ -50,10 +50,11 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'myportfolio.urls'
 
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'portfolio', 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -67,6 +68,11 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'myportfolio.wsgi.application'
+
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
+
+handler404 = 'myportfolio.views.handler404'
+handler500 = 'myportfolio.views.handler500'
 
 # Database
 # https://docs.djangoproject.com/en/3.0/ref/settings/#databases
