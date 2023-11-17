@@ -22,7 +22,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '7p#wsdw2e_3%qh4@^_*or@1v+^x0(ogu-%nn($n4c9^k3v*+s@'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
 
@@ -35,6 +35,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     'portfolio',
 ]
 
@@ -50,11 +51,10 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'myportfolio.urls'
 
-
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'portfolio', 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -117,5 +117,8 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-STATIC_URL = '/static/'
+STATIC_URL = '/staticfiles/'
+# STATICFILES_DIRS = [os.path.join(BASE_DIR, 'staticfiles')]
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')

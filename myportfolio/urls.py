@@ -2,9 +2,11 @@ from django.contrib import admin
 from django.urls import path, include
 
 from portfolio import views
+from portfolio.views import home
 
 urlpatterns = [
-    path('', views.accueil, name='accueil'),
+    path('', views.home, name='home'),
+    # path('', views.accueil, name='accueil'),
     path('admin/', admin.site.urls),
     path('', include('portfolio.urls')),
 ]

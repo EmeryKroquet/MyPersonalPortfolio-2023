@@ -1,0 +1,10 @@
+<!-- about.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>{{ about_data.heading }}</h1>
+  <p>Career: {{ about_data.career }}</p>
+  <p>{{ about_data.description }}</p>
+  <img src="{% static 'images/' %}{{ about_data.profile_img }}" alt="Profile Image">
+  <p>Last Update: {{ about_data.updated }}</p>
+{% endblock %}

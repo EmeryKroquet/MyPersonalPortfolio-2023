@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block contenu %}
+<h1>Mes Compétences</h1>
+<ul>
+    {% for competence in competences %}
+        <li>{{ competence.nom }}</li>
+    {% empty %}
+        <li>Aucune compétence disponible pour le moment.</li>
+    {% endfor %}
+</ul>
+{% endblock %}

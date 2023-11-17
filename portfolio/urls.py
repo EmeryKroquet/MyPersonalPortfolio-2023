@@ -1,13 +1,15 @@
 from django.urls import path
 from . import views
 
-
-app_name = 'portfolio'
-
 urlpatterns = [
-    path('projets/', views.afficher_projets, name='projets'),
-    path('competences/', views.afficher_competences, name='competences'),
-    path('experience/', views.afficher_experience, name='experience'),
-    path('certifications/', views.afficher_certifications, name='certifications'),
+    # path('', views.home, name='home'),
+    path('about/', views.about, name='about'),
+    path('projects/', views.show_projects, name='show_projects'),
+    path('skills/', views.show_skills, name='show_skills'),
+    path('experience/', views.show_experience, name='show_experience'),
+    path('certifications/', views.show_certifications, name='show_certifications'),
+    path('projects/<int:project_id>/', views.project_detail, name='project_detail'),
+    path('experience/<int:experience_id>/', views.experience_detail, name='experience_detail'),
+    path('certifications/<int:certification_id>/', views.certification_detail, name='certification_detail'),
     path('contact/', views.contact, name='contact'),
 ]
