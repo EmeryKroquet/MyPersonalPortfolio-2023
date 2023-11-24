@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+
+<footer class="text-center py-4">
+      {% if footer_data %}
+        <div class="container px-5 mb-2">
+          {% for footer in footer_data %}
+            Copyright &copy; <script>document.write(new Date().getFullYear())</script> {{ footer.copyright }}.
+          {% endfor %}
+        </div>
+      {% else %}
+        <h5 class="text-primary text-center">No Data</h5>
+      {% endif %}
+    </footer>

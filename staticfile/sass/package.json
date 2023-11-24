@@ -1,0 +1,11 @@
+{
+  "name": "portfolio-website",
+  "version": "1.0.0",
+  "description": "Portfolio Website",
+  "author": "MG",
+  "license": "MIT",
+  "dependencies": {
+    "bootstrap": "^5.3.1",
+    "material-icons": "^1.13.10"
+  }
+}

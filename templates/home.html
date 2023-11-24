@@ -1,11 +1,44 @@
+ {% extends 'base.html' %}
 <!-- home.html -->
-{% extends 'base.html' %}
 
-{% block title %}Home - My Site{% endblock %}
-
+{% load static %}
 {% block content %}
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <!-- Navigation content -->
-    </nav>
-    <!-- Your main content goes here -->
+<header class="py-3">
+    <div class="container px-5">
+        {% if home_data %}
+        <div class="row align-items-center">
+            {% for home in home_data %}
+            <div class="col-lg-8 col-xl-7 col-xxl-6">
+                <div class="my-5">
+                    <h2 class="text-center fw-bold mb-2">{{ home.title }}</h2>
+                    <h2 class="text-center fw-bold mb-2">{{ home.subtitle }}</h2>
+                    <p class="lead text-center text-white mb-4">
+                        {{ home.description }}
+                    </p>
+                    <div class="d-grid gap-2 d-sm-flex justify-content-sm-center mb-5">
+                        <button type="button" class="btn btn-light btn-lg text-uppercase px-4 py-2 me-sm-3">
+                            Learn More
+                            <span class="material-icons-outlined ms-2">help_outline</span>
+                        </button>
+                        <button type="button" id="demo" class="btn btn-outline-light btn-lg text-uppercase px-4 py-2 me-sm-3">
+                            View Demo
+                            <span class="material-icons-outlined ms-2">play_circle</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-5 col-xxl-6 justify-content-center">
+                {% if home.image.url %}
+                <img class="card-img-top" src="{{ home.image.url }}" alt="Home Image">
+                {% else %}
+                <img class="card-img-top" src="{% static 'images/placeholder.png' %}" alt="Image Not Available">
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+        {% else %}
+        <h5 class="text-white text-center">No Data</h5>
+        {% endif %}
+    </div>
+</header>
 {% endblock %}

@@ -1,0 +1,27 @@
+body {
+    background-image: url('../images/img_1.png');
+    background-size: cover; /* pour s'assurer que l'image couvre tout l'arrière-plan */
+}
+
+/* Navbar Styling */
+.navbar {
+    background-color: #6D50C7; /* Couleur d'arrière-plan de la navbar */
+    padding: 15px 0; /* Espacement interne de la navbar */
+}
+
+.navbar-brand, .navbar-nav .nav-link {
+    color: #6D50C7 !important; /* Couleur du texte de la marque et des liens */
+    font-weight: bold; /* Gras pour le texte */
+}
+
+.navbar-toggler {
+    border: 2px solid #6D50C7; /* Bordure du bouton de basculement */
+}
+
+.navbar-toggler-icon {
+    background-color: #6D50C7; /* Couleur de l'icône du bouton de basculement */
+}
+
+.navbar-nav .nav-item {
+    margin: 0 10px; /* Marge entre les éléments du menu */
+}

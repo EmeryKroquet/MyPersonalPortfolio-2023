@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Educations</h1>
+    <div class="row">
+        {% for education in education_list %}
+            <div class="col-md-4">
+                <div class="card mb-2">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ education.user }}</h5>
+                        <p class="card-text">{{ education.degree }}</p>
+                        <p class="card-text">{{ education.institution }}</p>
+                        <p class="card-text">{{ education.graduation_year }}</p>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock %}
